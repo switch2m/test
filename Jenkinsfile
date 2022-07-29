@@ -1,10 +1,20 @@
+def gv
+
 pipeline {
     agent any
     stages {
+        stage('init') {
+            steps {
+                script {
+                    gv = load "script.groovy"
+                }
+            }
+        }
         stage('npm install') {
             steps {
-                echo 'installing packages'
-                sh 'npm install'
+                script {
+                    gv.package_install()
+                }
             }
         }
         stage('build image') {
