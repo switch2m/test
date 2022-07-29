@@ -21,9 +21,9 @@ pipeline {
             steps {
                 echo 'Building the image'
                 withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-                    sh 'docker build -t switch2mdock/test:1.0 .'
+                    sh 'docker build -t switch2mdock/test:2.0 .'
                     sh "echo $PASS | docker login -u $USER --password-stdin"
-                    sh 'docker push switch2mdock/test:1.0'
+                    sh 'docker push switch2mdock/test:2.0'
                 }
             }
         }
