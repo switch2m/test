@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          how aboout nowww
+          adding some changes
         </a>
       </header>
     </div>
